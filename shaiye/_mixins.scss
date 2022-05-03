@@ -1,0 +1,52 @@
+@use "sass:math";
+
+/* Buttons */
+@mixin btn($bg-color: #e2e2e2) {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	border: 0;
+	padding: $base-padding $base-padding * 2;
+	border-radius: $base-border-radius;
+	background-color: $bg-color;
+}
+
+@mixin badge($bg-color: $info) {
+	border-radius: $base-border-radius * 4;
+	background-color: $bg-color;
+	padding: math.div($base-padding, 4) math.div($base-padding, 2);
+	font-size: $font-size-sm;
+	font-weight: normal;
+}
+
+/* Responsive */
+@mixin xs {
+	@media (max-width: map-get($breakpoints, "xs")) {
+		@content;
+	}
+}
+@mixin sm {
+	@media (min-width: map-get($breakpoints, "sm")) {
+		@content;
+	}
+}
+@mixin md {
+	@media (min-width: map-get($breakpoints, "md")) {
+		@content;
+	}
+}
+@mixin lg {
+	@media (min-width: map-get($breakpoints, "lg")) {
+		@content;
+	}
+}
+@mixin xl {
+	@media (min-width: map-get($breakpoints, "xl")) {
+		@content;
+	}
+}
+@mixin breakpoint($bp: 0) {
+	@media (min-width: $bp) {
+		@content;
+	}
+}

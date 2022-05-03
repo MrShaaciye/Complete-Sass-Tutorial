@@ -1,0 +1,4 @@
+npm init
+npm install gulp gulp-sass sass --save-dev
+npx gulp
+npm install gulp-purgecss --save-dev

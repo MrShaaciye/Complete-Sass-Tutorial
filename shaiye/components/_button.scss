@@ -1,0 +1,29 @@
+@each $key, $val in $colors {
+	.btn-#{$key} {
+		@include btn($val);
+		&:hover {
+			background-color: lighten($val, 5%);
+		}
+	}
+
+	.btn-#{$key}-outlined {
+		@include btn(#fff);
+		border: $base-border-thickness solid $val;
+		&:hover {
+			background-color: $val;
+		}
+	}
+
+	.btn-#{$key}-complement {
+		@include btn($val);
+		color: light-comp($val);
+		&:hover {
+			color: $val;
+			background-color: light-comp($val);
+		}
+	}
+}
+
+.btn {
+	@include btn;
+}
